@@ -18,7 +18,7 @@ namespace SalesWebMVC.Migrations
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("SalesWebMVC.Models.Departament", b =>
+            modelBuilder.Entity("SalesWebMVC.Models.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -27,7 +27,7 @@ namespace SalesWebMVC.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departament");
+                    b.ToTable("Department");
                 });
 #pragma warning restore 612, 618
         }

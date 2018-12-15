@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SalesWebMVC.Services;
 
 namespace SalesWebMVC.Controllers
 {
     public class SellersController : Controller
     {
+        private readonly SellerService _sellerSerice;
+
+        public SellersController(SellerService sellerSerice)
+        {
+            _sellerSerice = sellerSerice;
+        }
+
+
         public IActionResult Index()
         {
-            return View();
+            var list = _sellerSerice.FindAll();
+            return View(list);
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using SalesWebMVC.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SalesWebMVC.Services
 {
@@ -13,6 +11,14 @@ namespace SalesWebMVC.Services
         public SellerService(SalesWebMVCContext context)
         {
             _context = context;
+        }
+
+        public void Insert(Seller obj)
+        {
+            // Adiciona o objeto Seller ao banco de dados
+            _context.Add(obj);
+            // Salva as alterações no banco de dados
+            _context.SaveChanges();
         }
 
         public List<Seller> FindAll()
